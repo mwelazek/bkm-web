@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 1`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Last Changed:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 2`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Version:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    1
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 3`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Subject type:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    Organization
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 4`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Publisher:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    Health eData Inc
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 5`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Effective period start:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 6`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Effective period end:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire details keyValue pairs 7`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Last reviewed date:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire single item preview 1`] = `
+<li
+  class="questionnaireItemsList-title"
+  data-testid="linkId-/G1"
+>
+  <span
+    class="ant-typography css-dev-only-do-not-override-k7429z"
+  >
+    Facility MetaData
+  </span>
+   
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    linkId: /G1
+  </span>
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    type: group
+  </span>
+</li>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire single item preview 2`] = `
+<li
+  class="questionnaireItemsList-title"
+  data-testid="linkId-/G1/Q1"
+>
+  <span
+    class="ant-typography css-dev-only-do-not-override-k7429z"
+  >
+    Facility ID
+  </span>
+   
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    linkId: /G1/Q1
+  </span>
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    type: string
+  </span>
+</li>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire single item preview 3`] = `
+<li
+  class="questionnaireItemsList-title"
+  data-testid="linkId-/G1/Q2"
+>
+  <span
+    class="ant-typography css-dev-only-do-not-override-k7429z"
+  >
+    Summary Census #ID
+  </span>
+   
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    linkId: /G1/Q2
+  </span>
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    type: string
+  </span>
+</li>
+`;
+
+exports[`Questionnaire profile view renders correctly: questionnaire single item preview 4`] = `
+<li
+  class="questionnaireItemsList-title"
+  data-testid="linkId-/G1/Q3"
+>
+  <span
+    class="ant-typography css-dev-only-do-not-override-k7429z"
+  >
+    Effective Date
+  </span>
+   
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    linkId: /G1/Q3
+  </span>
+  <span
+    class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+  >
+    type: date
+  </span>
+</li>
+`;
+
+exports[`no items edge case: questionnaire meta 1`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Last Changed:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`no items edge case: questionnaire meta 2`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Version:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    1
+  </dd>
+</div>
+`;
+
+exports[`no items edge case: questionnaire meta 3`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Subject type:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    Organization
+  </dd>
+</div>
+`;
+
+exports[`no items edge case: questionnaire meta 4`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Publisher:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    Health eData Inc
+  </dd>
+</div>
+`;
+
+exports[`no items edge case: questionnaire meta 5`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Effective period start:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`no items edge case: questionnaire meta 6`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Effective period end:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`no items edge case: questionnaire meta 7`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Last reviewed date:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`view details show when available: questionnaire details keyValue pairs 1`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Last Changed:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    4/11/2020
+  </dd>
+</div>
+`;
+
+exports[`view details show when available: questionnaire details keyValue pairs 2`] = `
+<div
+  class="keyValueGrid-pair"
+>
+  <dt
+    class="keyValueGrid-pair__label"
+  >
+    Version:
+  </dt>
+  <dd
+    class="keyValueGrid-pair__value"
+  >
+    1
+  </dd>
+</div>
+`;
+
+exports[`view details show when available: questionnaire items preview 1`] = `
+<ul
+  class="questionnaireItemsList"
+>
+  <li
+    class="questionnaireItemsList-title"
+    data-testid="linkId-/G1/Q4"
+  >
+    <span
+      class="ant-typography css-dev-only-do-not-override-k7429z"
+    >
+      What pizza toppings would you like?
+    </span>
+     
+    <span
+      class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+    >
+      linkId: /G1/Q4
+    </span>
+    <span
+      class="ant-tag ant-tag-default css-dev-only-do-not-override-k7429z"
+    >
+      type: choice
+    </span>
+  </li>
+  <li>
+    <ul
+      class="questionnaireItemsList__questions-list"
+    >
+      <li
+        data-testid="linkId-/G1/Q4-help"
+      >
+        Favorite toppings
+      </li>
+    </ul>
+  </li>
+</ul>
+`;

@@ -1,0 +1,36 @@
+{
+  "name": "@opensrp/server-service",
+  "version": "0.0.17",
+  "description": "Wrapper around OpenSRP Server REST API",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/OpenSRP/web",
+  "scripts": {
+    "test": "run -T test $INIT_CWD --verbose",
+    "tsc": "run -T tsc",
+    "lint": "run -T eslint ./**/*.{js,jsx,ts,tsx}",
+    "copy": "run -T copyfiles -u 1 \"./src/**/*.{css,html}\" \"./dist/\"",
+    "build": "run tsc && run transpile && run copy",
+    "transpile": "run -T babel src -d dist --root-mode upward --extensions .ts,.tsx --ignore '**/*.test.ts,**/*.test.tsx,**/tests,**/__tests__'"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "../../setupTests"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/OpenSRP/web/issues"
+  },
+  "author": "Ona Engineering",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/types",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@onaio/utils": "^0.0.1"
+  }
+}
