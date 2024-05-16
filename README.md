@@ -1,127 +1,48 @@
-# fhir-web
+[![Android CI with Gradle](https://github.com/opensrp/fhircore/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/opensrp/fhircore/actions/workflows/ci.yml?query=branch%3Amain)
+[![Codecov Test Coverage](https://codecov.io/gh/opensrp/fhircore/branch/main/graph/badge.svg?token=IJUTHZUGGH)](https://codecov.io/gh/opensrp/fhircore)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Zulip Chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://chat.fhir.org/#narrow/stream/370552-OpenSRP)
+[![Slack Chat](https://img.shields.io/badge/slack-join_chat-purple)](https://join.slack.com/t/opensrp/shared_invite/zt-1xvw5fsjo-5RPlKqHmpU57SumJavgCzA)
 
-[![codecov](https://codecov.io/gh/onaio/fhir-web/branch/master/graph/badge.svg?token=EG3TX9MAM4)](https://codecov.io/gh/onaio/fhir-web)
+# OpenSRP FHIR Core
 
-<!-- We need an introduction banner here -->
+FHIR Core is a Kotlin application for delivering offline-capable, mobile-first healthcare project implementations from local community to national and international scale using FHIR and the WHO Smart Guidelines on Android.
 
-fhir-web is the default frontend for the [HAPI FHIR Server](https://github.com/opensrp/hapi-fhir-jpaserver-starter), as well as a configuration dashboard for the FHIR-based version of [OpenSRP](https://github.com/opensrp/fhircore) mobile application. It provides access to healthcare data, configuration options, and other functionality provided by OpenSRP.
+FHIR Core is architected as a FHIR native digital health platform powered by Google's [Android FHIR SDK](https://github.com/google/android-fhir) and [HAPI FHIR](https://hapifhir.io/). FHIR Core's user experience and module oriented design are based on over a decade of real world experience implementing digital health projects with [OpenSRP](https://smartregister.org/). This repository contains the Android mobile application built to:
 
-## Table of Contents
+- load configuration data as FHIR resources,
+- support the WHO Smart Guidelines,
+- manage the identities of healthcare workers (HCWs), community health workers (CHWs), care teams, patients, and clients,
+- collect, view, and edit healthcare data with dynamic forms using FHIR's [Structured Data Capture](https://hl7.org/fhir/us/sdc/index.html) (SDC) implementation,
+- securely store healthcare data encrypted at rest and securely transmit healthcare data using TLS,
+- manage location hierarchies defined by community to national and international administrative boundaries.
 
----
+For remote data storage and login, the mobile application requires:
+- a [Keycloak](https://www.keycloak.org/) server to manage identity, authentication, and authorization;
+- a [HAPI FHIR](https://hapifhir.io/) server to store operation and configuration data that includes the [HAPI FHIR to Keycloak integration](https://github.com/opensrp/hapi-fhir-keycloak).
 
-- [fhir-web](#fhir-web)
-  - [Table of Contents](#table-of-contents)
-  - [What is the FHIR Standard](#what-is-the-fhir-standard)
-  - [What is OpenSRP](#what-is-opensrp)
-  - [Project Architecture](#project-architecture)
-  - [Repository Setup](#repository-setup)
-    - [Bootstrapping](#bootstrapping)
-    - [Current Build Tools](#current-build-tools)
-    - [Deprecated Build Tools](#deprecated-build-tools)
-  - [Getting Started](#getting-started)
-  - [Contributing](#contributing)
-  - [Deployments](#deployments)
-    - [Prerequisites](#prerequisites)
-    - [1. Docker](#1-docker)
-    - [2. Kubernetes](#2-kubernetes)
-    - [3. Ansible](#3-ansible)
-  - [Configuration](#configuration)
-    - [Environment Variables](#environment-variables)
-    - [Multi-language Support (MLS)](#multi-language-support-mls)
-  - [Publishing](#publishing)
-  - [Deprecation Notice](#deprecation-notice)
+FHIRcore also interoperates well with:
+- [OpenSRP Web](https://github.com/OpenSRP/web) to access healthcare data from the same HAPI FHIR server.
 
-## What is the FHIR Standard
-
-HL7 Fast Healthcare Interoperability Resources (`FHIR`), is a standard to enable quick and efficient representation and exchange of health care data, including clinical and administrative data, by digital health systems.
-
-## What is OpenSRP
-
-OpenSRP is a Kotlin application for delivering offline-capable, mobile-first healthcare project implementations from local community to national and international scale using FHIR and the WHO Smart Guidelines on Android.
-
-## Project Architecture
-
-<!-- We need an architecture diagram here -->
-
-fhir-web consumes FHIR resources from the[ OpenSRP HAPI FHIR server](https://github.com/opensrp/hapi-fhir-jpaserver-starter). Both fhir-web and the HAPI FHIR server use a [Keycloak Server](https://hub.docker.com/r/onaio/keycloak) for authentication (Oauth 2.0). On top of the React JS web application, there is a tiny [Express JS Server](https://github.com/onaio/express-server) that is bundled together with fhir-web that handles both authentication and serving the compiled fhir-web files. For All Intents and Purposes, both the Express and the React JS apps are bundled together and collectively referred to as the fhir-web.
-
-## Repository Setup
-
-### Bootstrapping
-
-This repository is a monorepo bootstrapped with [Lerna](https://github.com/lerna/lerna) and [Yarn Workspaces](https://yarnpkg.com/features/workspaces). It is divided into two workTrees, the first, [/app](/app/), containing the actual React application, and the second, [/packages](/packages/) containing the different packages that `/app` consume.
-
-### Current Build Tools
-
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Ant Design](https://ant.design/)
-- [Lerna](https://github.com/lerna/lerna)
-- [Yarn Workspaces](https://yarnpkg.com/features/workspaces)
-- [TanStack Query](https://tanstack.com/query)
-- [Jest](https://jestjs.io/)
-- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- [React Router](https://reactrouter.com/)
-- [Eslint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-
-### Deprecated Build Tools
-
-- [Enzyme](https://enzymejs.github.io/enzyme/)
-- [React Redux](https://react-redux.js.org/)
+<img align=center width=400 src="static/img/fhircore.png">
 
 ## Getting Started
 
-- [Getting Started Documentation](/docs/getting-started.md).
+Due to it's dependency on the Android FHIR SDK's workflow library, OpenSRP FHIR Core requires a minimum Android SDK version of Android 8.0 (API level 26).
 
-## Contributing
+This repository contains the folders
+* **[android](android)**: for building the Android application.
+* **[docs](docs)**: a library of documents describing the FHIR Core solution.
 
-- [Contributing Documentation](/docs/CONTRIBUTING.md).
+We recommend reviewing the [docs](https://docs.smartregister.org/) before setting up the Android Studio Project in the [android](android) folder.
 
-## Deployments
+For starter resources on the FHIR specification:
 
-We use different technologies to deploy fhir-web.
+1. [Intro to FHIR](https://youtu.be/YbQcJj1GqH0) - By James Agnew of Smile CDR
+1. [FHIR resource list](http://hl7.org/fhir/resourcelist.html)
 
-### Prerequisites
+For starter resources on the Android FHIR SDK and this repo:
 
-- A well configured [keycloak server](https://hub.docker.com/r/onaio/keycloak) deployment.
-  - We currently support version `18.0.0-legacy`
-  - This should include the Keycloak [Realm](https://www.keycloak.org/docs/latest/server_admin/#configuring-realms) and [Client](https://www.keycloak.org/docs/latest/server_admin/#assembly-managing-clients_server_administration_guide) configurations.
-- A well configured [Hapi FHIR server](https://github.com/opensrp/hapi-fhir-jpaserver-starter) deployment.
-
-### 1. Docker
-
-- [fhir-web Docker Deployment Documentation](/docs/fhir-web-docker-deployment.md).
-
-### 2. Kubernetes
-
-- [fhir-web Kubernetes Helm Chart](https://github.com/opensrp/helm-charts/tree/main/charts/opensrp-web).
-
-### 3. Ansible
-
-- [fhir-web Ansible Playbook](https://github.com/opensrp/playbooks/blob/master/web.yml)
-  - Run an fhir-web deployment with certbot, react, express, and nginx.
-  - You'll need accompanying ansible inventories
-
-## Configuration
-
-### Environment Variables
-
-- [List Of Configurable Environment Variables](/docs/env.md).
-
-### Multi-language Support (MLS)
-
-- [Internalization and Multi Language Support Documentation](/docs/I18n.md).
-
-## Publishing
-
-- [Publishing Documentation](/docs/publishing.md).
-
-## Deprecation Notice
-
-**Important:** We are deprecating packages used for administration of both opensrp web server and mobile clients that do not use fhir. These packages will no longer be actively maintained or receive updates.
-
-The code can be found in this [branch](https://github.com/opensrp/web/tree/opensrp-1). Any future releases and development should be done from this branch.
-
-For any questions or assistance regarding issues in the affected modules, please feel free to create an [issue](https://github.com/opensrp/web/issues/new/choose)
+1. Android FHIR SDK Demo - [Link](https://drive.google.com/file/d/1ORjk3pNOKjGyZlbayAViPy4xkI8p-aFB/view?usp=sharing)
+1. Android FHIR SDK Intro Slide deck - [Link](https://docs.google.com/presentation/d/1oc6EBJAcXsBwyBgtnra61xoM7naBF0aj8WbfrUT7Y2A)
+1. FHIR Core Intro slide deck - [Link](https://docs.google.com/presentation/d/1eFsf9a5dcNqKXlfsEWyNZyoVooIbK3jq6694xarARr8)

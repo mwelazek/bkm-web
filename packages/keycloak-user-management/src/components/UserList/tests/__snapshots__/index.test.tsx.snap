@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`components/UserList renders user list correctly: header actions col props 1`] = `"Add UserFirst NameLast NameUsernameActionsBenjaminMwalimumwalimuEditOnakenyaonaEditOnaAdminona-adminEditDemokenyaopensrpEdit120 / page"`;
-
-exports[`components/UserList renders user list correctly: table text 1`] = `"First NameLast NameUsernameActionsBenjaminMwalimumwalimuEditOnakenyaonaEditOnaAdminona-adminEditDemokenyaopensrpEdit"`;
-
-exports[`components/UserList works correctly with store: full rendered text 1`] = `"User ManagementAdd UserFirst NameLast NameUsernameActionsBenjaminMwalimumwalimuEditOnakenyaonaEditOnaAdminona-adminEditDemokenyaopensrpEdit120 / page"`;
