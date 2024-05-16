@@ -1,5 +1,0 @@
-build/
-release/
-src/*/assets/configs/
-src/androidTest/assets/resources.db
-src/benchmark/assets/resources.db

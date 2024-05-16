@@ -1,3 +1,0 @@
-[submodule "android/p2p"]
-	path = android/p2p
-	url = git@github.com:opensrp/p2p.git
